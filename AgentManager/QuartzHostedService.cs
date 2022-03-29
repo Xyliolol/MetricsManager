@@ -7,7 +7,7 @@ public class QuartzHostedService : IHostedService
     private readonly IJobFactory _jobFactory;
     private readonly IEnumerable<JobSchedule> _jobSchedules;
 
-    public QuartzHostedService(       
+    public QuartzHostedService(
         ISchedulerFactory schedulerFactory,
         IJobFactory jobFactory,
         IEnumerable<JobSchedule> jobSchedules)

@@ -11,7 +11,7 @@ namespace MetricsAgent.Jobs
 
         // Счётчик для метрики CPU
         private PerformanceCounter _ramCounter;
-        
+
 
         public RamMetricJob(IRamMetricsRepository repository)
         {

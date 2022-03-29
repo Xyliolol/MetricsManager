@@ -12,15 +12,15 @@ namespace MetricsManager
                 logger.Debug("init main");
                 CreateHostBuilder(args).Build().Run();
             }
-           
+
             catch (Exception exception)
-            {             
+            {
                 logger.Error(exception, "Stopped program because of exception");
                 throw;
             }
             finally
             {
-                
+
                 NLog.LogManager.Shutdown();
             }
         }
@@ -32,8 +32,8 @@ namespace MetricsManager
             })
             .ConfigureLogging(logging =>
             {
-                logging.ClearProviders(); 
-                logging.SetMinimumLevel(LogLevel.Trace); 
-            }).UseNLog(); 
+                logging.ClearProviders();
+                logging.SetMinimumLevel(LogLevel.Trace);
+            }).UseNLog();
     }
 }

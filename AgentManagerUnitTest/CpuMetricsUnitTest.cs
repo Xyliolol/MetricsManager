@@ -13,6 +13,7 @@ using Xunit;
 
 namespace MetricsAgentTest
 {
+
     public class CpuControllerUnitTests
     {
         private readonly CpuMetricsController _controller;
