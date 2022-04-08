@@ -23,6 +23,20 @@ namespace MetricsManager.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Получает метрики Ram на заданном диапазоне времени c ID агента
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса:       
+        /// GET api/metrics/ram/agent/1/from/2022.03.14/to/2022.03.17
+        /// </remarks> 
+        /// <param name="agentId">ID агента</param> 
+        /// <param name="fromTime">начальная метрика времени в форме даты с 01.01.1970</param>  
+        /// <param name="toTime">конечная метрика времени в форме даты с 01.01.1970</param>
+        /// <returns>Список метрик и ID агента, сохранённых в заданном диапазоне времени</returns>
+        /// <response code="200">Если всё хорошо</response>
+        /// <response code="400">Если передали неправильные параметры</response>
+
         [HttpGet("agent/{agentId}/from/{fromTime}/to/{toTime}")]
         public IActionResult GetAvailableFromAgent([FromRoute] int agentId, [FromRoute] DateTimeOffset fromTime, [FromRoute] DateTimeOffset toTime)
         {
@@ -31,6 +45,18 @@ namespace MetricsManager.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Получает метрики Ram на заданном диапазоне времени
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса:       
+        /// GET api/metrics/ram/cluster/from/2022.03.14/to/2022.03.17
+        /// </remarks>         
+        /// <param name="fromTime">начальная метрика времени в форме даты с 01.01.1970</param>  
+        /// <param name="toTime">конечная метрика времени в форме даты с 01.01.1970</param>
+        /// <returns>Список метрик, сохранённых в заданном диапазоне времени</returns>
+        /// <response code="200">Если всё хорошо</response>
+        /// <response code="400">Если передали неправильные параметры</response>
 
         [HttpGet("cluster/from/{fromTime}/to/{toTime}")]
         public IActionResult GetAvailable([FromRoute] DateTimeOffset fromTime, [FromRoute] DateTimeOffset toTime)

@@ -14,7 +14,7 @@ namespace AgentManager.Controllers
         private readonly IDotNetMetricsRepository _dotNetMetricsRepository;
         private readonly IMapper _mapper;
 
-        public DotNetMetricsController(ILogger<DotNetMetricsController> logger, IDotNetMetricsRepository repository ,IMapper mapper)
+        public DotNetMetricsController(ILogger<DotNetMetricsController> logger, IDotNetMetricsRepository repository, IMapper mapper)
         {
             _logger = logger;
             _dotNetMetricsRepository = repository;
